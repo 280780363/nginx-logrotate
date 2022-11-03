@@ -1,6 +1,6 @@
-FROM ubuntu:20.04
+FROM nginx:1.18
 
-RUN apt-get update && apt-get -y install  nginx=1.18.* dos2unix
+RUN apt-get update && apt-get -y install logrotate dos2unix anacron
 
 COPY ./nginx /etc/logrotate.d/nginx
 COPY ./logrotate.conf /etc/logrotate.conf
